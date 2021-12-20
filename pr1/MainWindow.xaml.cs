@@ -27,12 +27,20 @@ namespace pr1
         }
         private void Расчет_Click (object sender, RoutedEventArgs e)
         {
-            int numberK, counter;
-            numberK = Convert.ToInt32(NumberUser.Text);
-            Practic.SumNumbers(numberK, out counter, out int sum, out string numberlist); //int numberK, out int sum, out string numberlist
-            Numbers.Text = numberlist;
-            Summa.Text = Convert.ToString(sum);
-            Counter.Text = Convert.ToString(counter);
+            try
+            {
+                int numberK, counter;
+                numberK = Convert.ToInt32(NumberUser.Text);
+                Practic.SumNumbers(numberK, out counter, out int sum, out string numberlist); //int numberK, out int sum, out string numberlist
+                Numbers.Text = numberlist;
+                Summa.Text = Convert.ToString(sum);
+                Counter.Text = Convert.ToString(counter);
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка, неверные данные.");
+            }
+
         }
         private void Info_Click(object sender, RoutedEventArgs e)
         {
